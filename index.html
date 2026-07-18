@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soner Berber — Full Stack Engineer</title>
+  <meta name="description"
+    content="Soner Berber — Full Stack Engineer. Builder of gym-system, a QR/TOTP based gym access and membership platform.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="statusbar">
+    <div class="statusbar-inner">
+      <div class="sb-left"><span class="dot"></span><b>SONER BERBER</b> · open to work</div>
+      <nav class="sb-nav">
+        <a href="#project">Project</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <section class="hero" id="top">
+      <p class="prompt"><span class="arrow">&gt;</span> whoami<span class="cursor"></span></p>
+      <h1 class="name">Soner <span>Berber</span></h1>
+      <p class="role">// full stack engineer</p>
+      <p class="bio">I build systems that stay useful after launch day — not just demos. My most recent project,
+        <b>gym-system</b>, replaces a gym's clipboard-and-spreadsheet routine with one dashboard: adding and freezing
+        memberships, and letting members in with a QR code that actually can't be screenshotted and passed around.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#project">View projects</a>
+        <a class="btn btn-ghost" href="assets/Soner-Berber-CV.pdf" target="_blank" rel="noopener">Download résumé</a>
+        <a class="btn btn-ghost" href="https://github.com/paRKer232" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-label">Shipped projects</div>
+          <div class="stat-value">1</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Core stack</div>
+          <div class="stat-value">JS · Node · React</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Target uptime</div>
+          <div class="stat-value">24 / 7</div>
+        </div>
+        <div class="stat">
+          <div class="stat-label">Status</div>
+          <div class="stat-value on">Active</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="project">
+      <div class="section-head">
+        <span class="section-tag">01</span>
+        <h2 class="section-title">gym-system</h2>
+      </div>
+
+      <div class="project-grid">
+        <div>
+          <div class="window">
+            <div class="window-chrome">
+              <span class="chrome-dot" style="background:#ff5f57"></span>
+              <span class="chrome-dot" style="background:#febc2e"></span>
+              <span class="chrome-dot" style="background:#28c840"></span>
+              <span class="chrome-url" id="chromeUrl">gym247.up.railway.app</span>
+            </div>
+            <img id="shot" src="assets/dashboard.png"
+              alt="gym-system admin dashboard showing member list, status, and QR actions">
+          </div>
+          <div class="tabs">
+            <button class="tab active" data-img="assets/dashboard.png" data-url="gym247.up.railway.app"
+              onclick="showTab(this)">Admin dashboard</button>
+            <button class="tab" data-img="assets/register.png" data-url="gym247.up.railway.app/register.html"
+              onclick="showTab(this)">Register member</button>
+            <button class="tab" data-img="assets/qr-pass.png" data-url="gym247.up.railway.app/index.html"
+              onclick="showTab(this)">Member QR pass</button>
+          </div>
+        </div>
+
+        <div class="project-side">
+          <h3>The problem</h3>
+          <p>Small gyms run membership on spreadsheets and a shared notebook by the door — no record of who froze a
+            membership, who's actually still active, or who's about to expire.</p>
+
+          <h3>What it does</h3>
+          <p>One admin dashboard to add, renew, freeze, and remove members. Each member gets a personal link with a QR
+            code that acts as their entry pass — no app install, no card to lose.</p>
+
+          <h3>The hard part</h3>
+          <p>The QR code can't just be a static image of a member ID — anyone could screenshot it and hand it to a
+            friend. I built it on <b style="color:var(--text)">TOTP (time-based one-time codes)</b>, the same idea
+            behind authenticator apps, so the code embedded in the QR rotates on its own. A copied screenshot goes stale
+            within the rotation window.</p>
+
+          <div class="taglist">
+            <span class="tag">JavaScript</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Express</span>
+            <span class="tag">React</span>
+            <span class="tag">MongoDB</span>
+            <span class="tag">TOTP / QR</span>
+          </div>
+
+          <div class="note"><b>Current limitation —</b> the original goal is round-the-clock, unmanned entry. It's not
+            there yet: that last step needs a QR scanner + door-lock controller on-site, which I don't have hardware for
+            yet. The software side is ready for it.</div>
+
+          <div class="project-links">
+            <a class="btn btn-primary" href="https://gym247.up.railway.app" target="_blank" rel="noopener">Live demo
+              ↗</a>
+            <a class="btn btn-ghost" href="https://github.com/paRKer232/gym-membership-sys" target="_blank"
+              rel="noopener">Source code ↗</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head">
+        <span class="section-tag">02</span>
+        <h2 class="section-title">Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-row"><span class="skill-name">HTML · CSS · JavaScript</span><span
+            class="skill-cat">Front-end</span></div>
+        <div class="skill-row"><span class="skill-name">React · Bootstrap</span><span class="skill-cat">Front-end</span>
+        </div>
+        <div class="skill-row"><span class="skill-name">Node.js · Express · REST APIs</span><span
+            class="skill-cat">Back-end</span></div>
+        <div class="skill-row"><span class="skill-name">MongoDB · MySQL</span><span class="skill-cat">Databases</span>
+        </div>
+        <div class="skill-row"><span class="skill-name">Git · GitHub</span><span class="skill-cat">Tools</span></div>
+        <div class="skill-row"><span class="skill-name">C# (Fundamentals &amp; Advanced, SoftUni)</span><span
+            class="skill-cat">Coursework</span></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-head">
+        <span class="section-tag">03</span>
+        <h2 class="section-title">Contact</h2>
+      </div>
+      <div class="pass">
+        <div>
+          <div class="pass-badge"><span class="dot" style="animation:none;"></span> Available</div>
+          <p class="pass-name">Soner Berber</p>
+          <p class="pass-role">Full Stack Engineer · Ardino, Kardzhali</p>
+          <div class="pass-links">
+            <a class="btn btn-primary" href="mailto:sonstriker4@gmail.com">sonstriker4@gmail.com</a>
+            <a class="btn btn-ghost" href="https://github.com/paRKer232" target="_blank"
+              rel="noopener">github.com/paRKer232</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="wrap">
+    <footer>
+      <span>gym-system by Soner Berber</span>
+      <span>Built with HTML · CSS · JS</span>
+    </footer>
+  </div>
+
+  <script>
+    function showTab(btn) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('shot').src = btn.dataset.img;
+      document.getElementById('chromeUrl').textContent = btn.dataset.url;
+    }
+  </script>
+
+</body>
+
+</html>
